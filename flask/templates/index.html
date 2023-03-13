@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <title>{% block title %} {{title}} {% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <!--Navbar-->
+    <div class="navbar">
+        <div class="container flex">
+            <h1 class="logo">Tadaa</h1>
+            <nav>
+                <ul>
+                    <li><a href="/features">features</a></li>
+                    <li><a href="/about">about</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!--App-->
+    <section>
+        <h1>Hello {{name.0}}!</h1>
+        <p>You are vistor number {{vistor_number}}! 245</p>
+    </section>
+    <!-- Footer -->
+ <footer class="footer bg-dark py-5">
+    <div class="container grid grid-3">
+        <div>
+            <h1>Danku
+            </h1>
+            <p>Copyright &copy; 2020</p>
+        </div>
+        <nav>
+            <ul>
+                <li><<a href="/features">features</a></li>
+                <li><a href="/about">about</a></li>
+            </ul>
+        </nav>
+        <div class="social">
+            <a href="#"><i class="fab fa-github fa-2x"></i></a>
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
