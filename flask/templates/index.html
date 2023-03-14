@@ -22,16 +22,89 @@
             </nav>
         </div>
     </div>
+    <!--Showcase-->
+    <section class="showcase">
+        <div class="container grid">
+            <div class="showcase-text">
+                <h1>Home Security</h1>
+                <p>Secure your home with state of the art secruity cameras at affordable prices</p>
+                <a href="features.html" class="btn btn-outline">Read More</a>
+            </div>
+        
+
+            <div class="Showcase-form card">
+                <h2>Secure My Home</h2>
+                <form>
+                    <div class="form-control">
+                        <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                <div class="form-control">
+                    <input type="email" name="email" placeholder="email" required>
+                </div>
+                <div class="form-control">
+                    <input type="text" name="address" placeholder="address" required>
+                </div>
+                <input type="submit" value="Send" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--Stats-->
+    <section class="stats">
+        <div class="container">
+            <h3 class="stats-heading text-center">
+             Welcome to Ghana's number 1 home security service provider. We make home security a lifestyle at affordable monthly rates   
+            </h3>
+
+            <div class="grid grid-3 text-center my-4">
+                <div>
+                    <i class="fas fa-server fa-3x"></i>
+                    <h3>10,349,405</h3>
+                    <p class="text-secondary"> Homes Secured</p>
+                </div>
+                <div>
+                    <i class="fas fa-server fa-3x"></i>
+                    <h3>Ghc 400,000</h3>
+                    <p class="text-secondary"> Bulglary Insurance</p>
+                </div>
+                <div>
+                    <i class="fas fa-server fa-3x"></i>
+                    <h3>24/7</h3>
+                    <p class="text-secondary"> Survilance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!--App-->
     <section>
         <h1>Hello {{name.0}}!</h1>
         <p>You are vistor number {{vistor_number}}! 245</p>
+        <p>Welcome to Tadaa todo app</p>
+        <h1>Todos</h1>
+        <ul>
+            {% for todo in todos%}
+            <li>
+                <input type = "checkbox" name="done" {% if todo['done'] %} checked {%endif%} onchange="this.form.submit()">
+                <span {% if todo['done'] %} style="text-decoration: line-through" {%endif%}>{{ todo['task']}}</span>></span>
+                {{ todo ['task']}}
+                <a href="{{ url_for('check', index=loop.index0) }}">Check</a>
+                <a href="{{ url_for('edit', index=loop.index0) }}">Edit</a>
+                <a href="{{ url_for('delete', index=loop.index0) }}">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <form action="{{ url_for('add')}}" method="post">
+            <input type="text" name="todo">
+            <button type="submit"> Add Todo </button>
+        </form>
     </section>
     <!-- Footer -->
  <footer class="footer bg-dark py-5">
     <div class="container grid grid-3">
         <div>
-            <h1>Danku
+            <h1>
             </h1>
             <p>Copyright &copy; 2020</p>
         </div>
